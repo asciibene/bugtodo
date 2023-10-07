@@ -1,0 +1,5 @@
+* Todo
+    - Put all misc files in misc folder
+        - Such as css
+        - NOT readme.md
+        - etc
