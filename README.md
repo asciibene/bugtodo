@@ -1,3 +1,3 @@
-# phptodo
+# bugTracker/ bugTODO
 
-Todo lists made simple.
+keep a list of issues with your program, much like you would on git; except faster, lightweight and all without using any third-party library
