@@ -11,7 +11,7 @@ class BugObject{
 
   public function __construct($ttl,$pri = 'None',$desc = null)
   {
-    $this->uid = uniqid(); //no use curr. (v.12)
+    $this->uid = uniqid(); //no use curr. (v.0.05)
     $this->timestamp=date_create('now');
     $this->title = $ttl;
     $this->state = "No State";
@@ -28,13 +28,7 @@ class BugObject{
   {
     return serialise($this);
   }
-  
-  public function get_subs(){
-  #Returns the sub array
-    return $this->sub;
-  }
-
-	public function get_details_array(){
+public function get_details_array(){
 	# Returns an array w/ obj's details as strings
 	  $proparray=[];
     foreach($this as $pname=>$pval):
@@ -52,4 +46,3 @@ class User{
  
   }
 }
-?>

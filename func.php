@@ -3,14 +3,11 @@ include_once("class.php");
 // Below : constants
 define("CONFIGLOC","./db/config.db");
 define("DBLOC","./db/todo.db");
-define("VER","v0.02");
+define("VER","v0.05");
 define("UDBLOC","./db/users.db"); #For later
-
 define("PDBLOC","./db/projx.db"); #For later
-$__CURRENT_PROJECT="TeST";
-// Constants END
-
-//  ----------- Helper Funcs ------------- (eventually move to another file)
+define("PDBLOC","./db/projx.db"); #For later
+// Constants end ---------  -----------Begin  Helper Funcs ------------- 
 function notify($ns){
   echo '<small class="notify">'.$ns.'</small>';
   return null;
@@ -49,6 +46,7 @@ function resetdb(){
 
 function initdb(){
   global $db;
+  global $config;
   if (file_exists(DBLOC)){
     $dbtxt=file_get_contents(DBLOC);
     $db=unserialize($dbtxt);
@@ -59,7 +57,7 @@ function initdb(){
    $dbtxt=serialize($db);
     file_put_contents(DBLOC,$dbtxt);
   } 
-  global $config;
+ 
   if (file_exists(CONFIGLOC)){
     $configtxt=file_get_contents(CONFIGLOC);
     $config=unserialize($configtxt);
@@ -106,7 +104,7 @@ function savedb(){
   return true;          
 }
 
-// -------------- Indocument functions ────────────────────
+// -------------- Indocument functions ----------------- 
 
 function intro_viewall_bugs(){
   global $db;
@@ -118,9 +116,6 @@ function intro_viewall_bugs(){
   endforeach;
   print('</ul>');
 }
-
-//XXX Below funcS should be incorporated into class db
-
 
 function indoc_new_bug($ttl){
   global $db;
@@ -164,6 +159,7 @@ function indoc_view_bug($bugid){
 
 function indoc_update_bug($id){
 // ndarr -> array of new details (use pack funcs)
+// 			donot
   global $db;
   $db[$id]->priority=$_POST['new_priority'] ?? $db[$id]->priority; 
   $db[$id]->state=$_POST['new_state'] ?? $db[$id]->state;
@@ -186,5 +182,4 @@ function indoc_delete_bug($bugid){
 // ───────────── MAIN STUFF ────────────-------------------------------------------------------------
 
 initdb();
-?>
 
