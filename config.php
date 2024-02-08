@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>phpTodo</title>
+<title>BugTodo config</title>
 <link rel="stylesheet" type="text/css" href="./style.css"/> 
 </head>
 <body>

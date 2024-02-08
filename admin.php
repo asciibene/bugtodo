@@ -1,7 +1,8 @@
 <?php 
 
 include_once "func.php";
-include_once "class.php";    
+include_once "class.php";
+    
 ?>
 <html>
 <head>
@@ -13,6 +14,7 @@ include_once "class.php";
 <br><hr>
 <?php if($_COOKIE['isAdmin']==true): ?>
 <a class="menuitem" href="config.php">Configuration</a>
+<a class="menuitem href="."></a>
 <hr>
 <?php endif; ?>
 <hr>

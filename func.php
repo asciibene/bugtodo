@@ -6,7 +6,6 @@ define("DBLOC","./db/todo.db");
 define("VER","v0.05");
 define("UDBLOC","./db/users.db"); #For later
 define("PDBLOC","./db/projx.db"); #For later
-define("PDBLOC","./db/projx.db"); #For later
 // Constants end ---------  -----------Begin  Helper Funcs ------------- 
 function notify($ns){
   echo '<small class="notify">'.$ns.'</small>';
@@ -97,10 +96,6 @@ function savedb(){
   file_put_contents(DBLOC,serialize($db));
   global $config;
   file_put_contents(CONFIGLOC,serialize($config));
-  global $udb;
-  file_put_contents(UDBLOC,serialize($udb));
-  global $prjdb;
-  file_put_contents(PDBLOC,serialize($prjdb));
   return true;          
 }
 
@@ -175,6 +170,12 @@ function indoc_delete_bug($bugid){
   unset($_GET['id']); 
   savedb();
   //notify('Deleted task #'.$bugid);
+}
+
+function checksec(){
+  if $_COOKIE['pass']
+
+
 }
 // ──────────────── End of indoc funcs -------------
 

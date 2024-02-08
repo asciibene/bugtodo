@@ -10,14 +10,14 @@ session_start();
 if (isset($_POST['action']) and $_POST['action']=="log_in") {
     $username = $_POST['login_usr'];
     $password = $_POST['login_pwd'];
-
-    if ($username == "admin" && password_verify("password", password_hash($password,PASSWORD_DEFAULT))) {
+    if ($username == "admin" && password_verify("defpass", password_hash($password,PASSWORD_DEFAULT))) {
       $_SESSION['isAdmin'] = true;
+      setcookie($adminpwd)
         header("Location: admin.php");
     } else {
         echo "Incorrect username or password.";
     }
-}
+}else{
 ?>    
 <form action="" method="post">
     <label for="login_usr">Username:</label>
@@ -28,7 +28,9 @@ if (isset($_POST['action']) and $_POST['action']=="log_in") {
 </form>
 </body>
 </html>
-
+<?php
+}
+?>
 
 
 
