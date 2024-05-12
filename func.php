@@ -173,7 +173,10 @@ function indoc_delete_bug($bugid){
 }
 
 function checksec(){
-  if $_COOKIE['pass']
+    #This function checks if the stored 'isadmin'
+    # cookie is defined and is equal to the hardcoded admin pass
+  if($_COOKIE['isAdmin'] == ){
+  }
 
 
 }

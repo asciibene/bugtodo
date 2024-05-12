@@ -12,7 +12,7 @@ include_once "class.php";
 <body>
 <h1 id="logo"><a id="logolink" href="index.php" ><sub id="logo_bug">bug</sub>Todo</a><span class="ver_num"><?= VER ?></span> [ADMIN]</h1>
 <br><hr>
-<?php if($_COOKIE['isAdmin']==true): ?>
+<?php if($_COOKIE['isAdmin']== ): #here it should check if cookie 'isadmin' actually contains the proper hash?>
 <a class="menuitem" href="config.php">Configuration</a>
 <a class="menuitem href="."></a>
 <hr>

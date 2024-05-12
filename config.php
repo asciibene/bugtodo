@@ -11,17 +11,15 @@
 
 <hr>
 <?php
-if(!empty($_POST)):
-  if($_POST['priority_arrows']=="show"):
-    $config['priority_arrows']=true;
-    notify('updated config !');
-  else:
-    $config['priority_arrows']=false;                        
-    notify('updated config !');
+    if(!empty($_POST)):
+      if($_POST['priority_arrows']=="show"):
+        $config['priority_arrows']=true;
+        notify('updated config !');
+      else:
+        $config['priority_arrows']=false;                        
+     notify('updated config !');
   endif;
 endif;
-
-
 ?>
 <h2>Configuration</h2>
 <form id="config_form" method="post">
